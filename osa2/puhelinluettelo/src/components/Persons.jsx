@@ -1,13 +1,7 @@
 import React from "react";
 import personSercives from "../services/persons";
 
-const Persons = ({
-  persons,
-  filter,
-  setPersons,
-  setUpdateMessage,
-  fectPersons,
-}) => {
+const Persons = ({ persons, filter, setPersons, setUpdateMessage }) => {
   const personsToShow =
     filter.length > 0
       ? persons.filter((person) =>
@@ -21,8 +15,7 @@ const Persons = ({
       .remove(id)
       .then((personRemoved) => {
         setUpdateMessage(`Deleted ${personToDelete.name}`);
-        //setPersons(persons.filter((person) => person.id !== personRemoved.id));
-        fectPersons();
+        setPersons(persons.filter((person) => person.id !== personRemoved.id));
         setTimeout(() => {
           setUpdateMessage(null);
         }, 5000);

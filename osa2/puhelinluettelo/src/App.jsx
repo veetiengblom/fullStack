@@ -14,12 +14,15 @@ const App = () => {
   const [updateMessage, setUpdateMessage] = useState(null);
 
   const fectPersons = () => {
+    console.log("fetched");
     personSercives.getAll().then((personData) => {
       setPersons(personData);
     });
   };
 
   useEffect(fectPersons, []);
+
+  console.log(persons);
 
   return (
     <div>
@@ -46,7 +49,6 @@ const App = () => {
         setPersons={setPersons}
         setUpdateMessage={setUpdateMessage}
         setErrorMessage={setErrorMessage}
-        fectPersons={fectPersons}
       />
     </div>
   );
