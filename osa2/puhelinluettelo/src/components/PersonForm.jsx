@@ -36,9 +36,7 @@ const PersonForm = ({
           }, 5000);
         })
         .catch((error) => {
-          setErrorMessage(
-            `Information of ${newName} has already been removed from server`
-          );
+          setErrorMessage(`${newName} is already in phonebook`);
           setTimeout(() => {
             setErrorMessage(null);
           }, 5000);
@@ -65,8 +63,9 @@ const PersonForm = ({
         }, 5000);
       })
       .catch((error) => {
+        console.log("name alreaydy in phonebook");
         setErrorMessage(
-          `Information of ${newName.name} has already been removed from server`
+          `Information of ${newName} has already been removed from server`
         );
         setTimeout(() => {
           setErrorMessage(null);

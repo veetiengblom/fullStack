@@ -46,6 +46,7 @@ const App = () => {
         setPersons={setPersons}
         setUpdateMessage={setUpdateMessage}
         setErrorMessage={setErrorMessage}
+        fectPersons={fectPersons}
       />
     </div>
   );
